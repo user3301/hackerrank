@@ -3,13 +3,14 @@
 //
 #include <vector>
 #include <iostream>
+#include <algorithm>
 class solution
 {
 public:
     void miniMaxSum(std::vector<int> arr)
     {
         std::vector<long> ans(2,0);
-        std::sort(arr.begin(), arr.end());
+        sort(arr.begin(), arr.end());
         for (int i = 0; i < arr.size(); ++i) {
             if(i ==0)
             {
