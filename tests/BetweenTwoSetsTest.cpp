@@ -20,11 +20,9 @@ TEST_F(BetweenTwoSetsTest, testmethod1)
 
 TEST_F(BetweenTwoSetsTest, testmethod2)
 {
-std::vector<int> a{3,4};
-std::vector<int> b{24,48};
-int expected = 2;
-int actual = solution.getTotalX(a,b);
-ASSERT_EQ(expected, actual);
+    std::vector<int> a{3,4};
+    std::vector<int> b{24,48};
+    int expected = 2;
+    int actual = solution.getTotalX(a,b);
+    ASSERT_EQ(expected, actual);
 }
-
-
