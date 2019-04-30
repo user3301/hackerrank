@@ -2,6 +2,7 @@
 // Created by user3301 on 2019-04-29.
 //
 #include <vector>
+#include<algorithm>
 class ElectronicsShop {
 public:
     // only works for c++ 14
