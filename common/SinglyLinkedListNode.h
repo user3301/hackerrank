@@ -9,6 +9,11 @@ struct SinglyLinkedListNode {
 public:
     int data;
     SinglyLinkedListNode* next;
+    SinglyLinkedListNode(int data) {
+        this->data = data;
+        this->next = nullptr;
+    }
+
 };
 
 #endif //OJ_SINGLYLINKEDLISTNODE_H

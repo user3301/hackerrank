@@ -9,11 +9,8 @@ protected:
 };
 
 TEST_F(PrintTheElementsOfALinkedListTest, testmethod1) {
-    SinglyLinkedListNode* head = new SinglyLinkedListNode;
-    SinglyLinkedListNode* next = new SinglyLinkedListNode;
-    next->data = 13;
-    next->next = nullptr;
-    head->data = 16;
+    SinglyLinkedListNode* head = new SinglyLinkedListNode(16);
+    SinglyLinkedListNode* next = new SinglyLinkedListNode(13);
     head->next = next;
 
     printTheElementsOfALinkedList.printLinkedList(head);
