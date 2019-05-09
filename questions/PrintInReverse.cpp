@@ -17,4 +17,13 @@ public:
             std::cout<<ans[i]<<std::endl;
         }
     }
+
+    //print recursively
+    void reversePrintRecursively(SinglyLinkedListNode* head) {
+        if(head== nullptr) {
+            return;
+        }
+        reversePrintRecursively(head->next);
+        std::cout<<head->data<<std::endl;
+    }
 };
