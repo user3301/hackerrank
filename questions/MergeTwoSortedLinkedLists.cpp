@@ -5,18 +5,19 @@
 class MergeTwoSortedLinkedLists {
 public:
     SinglyLinkedListNode* mergeLists(SinglyLinkedListNode* head1, SinglyLinkedListNode* head2) {
-        if(head1 == nullptr || head2 ==nullptr) return head1 ==nullptr? head2: head1;
-        SinglyLinkedListNode* current = nullptr;
-        SinglyLinkedListNode** headptr = &current;
-        while (head1!= nullptr || head2!=nullptr) {
-            if(head1== nullptr)
-            {
-//                current
-            }
+        SinglyLinkedListNode* ret = nullptr;
+        if(head1 == nullptr && head2== nullptr) return nullptr;
+        if(head1== nullptr) return head2;
+        if(head2 == nullptr) return head1;
 
+        if(head1->data > head2->data) {
+            ret = head2;
+            ret->next = mergeLists(head2->next, head1);
         }
-
-
-
+        else {
+            ret = head1;
+            ret->next = mergeLists(head1->next, head2);
+        }
+        return ret;
     }
 };
