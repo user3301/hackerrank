@@ -10,44 +10,28 @@ public:
         node->data = data;
         node->prev = nullptr;
         node->next = nullptr;
+
+        // empty linked list
         if(head == nullptr) return node;
 
-        auto current = head;
+        // node < the first element
+        if(node->data <= head->data) {
+            node->next = head;
+            head->prev = node;
+            return node;
+        }
 
-        while(current->data < data && current->next!= nullptr) {
-            current = current->next == nullptr ? current : current->next;
+        auto cur = head;
+        auto curPrev = cur;
+        while(cur!= nullptr && cur->data < node->data) {
+            curPrev = cur;
+            cur =  cur->next;
         }
-        if(current->next == nullptr) {
-            if(current->data < data) {
-                current->next = node;
-            }
-            else {
-                if(current == head) {
-                    current->prev = node;
-                    node->next = current;
-                    head = node;
-                }
-                else {
-                    current->prev->next = node;
-                    node->prev = current->prev;
-                    current->prev = node;
-                    node->next = current;
-                }
 
-            }
-        }
-        else {
-            if(current == head) {
-                current->prev = node;
-                node->next = current;
-                head = node;
-            }
-            current->prev->next = node;
-            node->prev = current->prev;
-            current->prev = node;
-            node->next = current;
-        }
+        curPrev->next = node;
+        node->prev = curPrev;
+        node->next = cur;
+        if(cur!= nullptr) cur->prev = node;
         return head;
-
     }
 };
