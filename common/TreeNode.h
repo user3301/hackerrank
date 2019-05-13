@@ -4,11 +4,11 @@
 struct TreeNode
 {
 public:
-    int val;
+    int data;
     TreeNode* left;
     TreeNode* right;
 
-    TreeNode(int val) : val(val), left(nullptr), right(nullptr) {}
+    TreeNode(int data) : data(data), left(nullptr), right(nullptr) {}
 };
 
 #endif //OJ_TREENODE_H
