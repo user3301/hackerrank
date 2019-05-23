@@ -13,6 +13,6 @@ TEST_F(EqualStacksTest,testmethod1) {
     std::vector<int> h2{4,3,2};
     std::vector<int> h3{1,1,4,1};
     int expected = 5;
-    int actual = equalStacks.equalStacks(h1,h2,h3);
+    int actual = equalStacks.equalStacks2(h1,h2,h3);
     ASSERT_EQ(expected,actual);
 }
